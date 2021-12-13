@@ -210,6 +210,58 @@
         ]
       },
       "path": "~/DeveloperTools/Info stick"
+    },
+    {
+      "name": "Dirtoncontrollerstructure",
+      "type": "structure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dirtoncontrollerstructure",
+      "path": "~/ArcheologySites/BoneBlocks/BonesOnDirt"
+    },
+    {
+      "name": "ActivateControllerBlock",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "activate_controller_block",
+      "metadata": {
+        "dependencies": []
+      },
+      "path": "~/ArcheologySites/BoneBlocks/BonesOnDirt"
+    },
+    {
+      "name": "DirtoncontrollerstructureOnStructureInstanceGenerated",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dirtoncontrollerstructure_on_structure_instance_generated",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
