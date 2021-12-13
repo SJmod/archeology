@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "archeology:block/bone_on_dirt_controller"
+    }
+  }
+}

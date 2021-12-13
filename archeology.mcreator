@@ -106,6 +106,45 @@
         ]
       },
       "path": "~/ArcheologySites/BoneBlocks/BonesOnDirt"
+    },
+    {
+      "name": "BoneOnDirtController",
+      "type": "block",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bone_on_dirt_controller",
+      "path": "~/ArcheologySites/BoneBlocks/BonesOnDirt"
+    },
+    {
+      "name": "BoneOnDirtControllerUpdateTick",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bone_on_dirt_controller_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -113,7 +152,8 @@
   "language_map": {
     "en_us": {
       "item.archeology.info_stick": "Info Stick",
-      "block.archeology.bonesondirt": "Bones on dirt"
+      "block.archeology.bonesondirt": "Bones on dirt",
+      "block.archeology.bone_on_dirt_controller": "Bones on dirt"
     }
   },
   "foldersRoot": {
