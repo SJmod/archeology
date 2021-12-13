@@ -15,7 +15,9 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.client.network.play.NetworkPlayerInfo;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.Minecraft;
+import net.minecraft.block.Blocks;
 
+import net.mcreator.archeology.block.BonesondirtBlock;
 import net.mcreator.archeology.ArcheologyMod;
 
 import java.util.Random;
@@ -72,6 +74,29 @@ public class BonesondirtBlockDestroyedByPlayerProcedure {
 					entityToSpawn.setPickupDelay((int) 10);
 					world.addEntity(entityToSpawn);
 				}
+			}
+			if (world instanceof World && !world.isRemote()) {
+				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.DIRT));
+				entityToSpawn.setPickupDelay((int) 10);
+				world.addEntity(entityToSpawn);
+			}
+		} else if (((!(new Object() {
+			public boolean checkGamemode(Entity _ent) {
+				if (_ent instanceof ServerPlayerEntity) {
+					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
+				} else if (_ent instanceof PlayerEntity && _ent.world.isRemote()) {
+					NetworkPlayerInfo _npi = Minecraft.getInstance().getConnection()
+							.getPlayerInfo(((AbstractClientPlayerEntity) _ent).getGameProfile().getId());
+					return _npi != null && _npi.getGameType() == GameType.CREATIVE;
+				}
+				return false;
+			}
+		}.checkGamemode(entity))) && ((EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH,
+				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)) != 0)))) {
+			if (world instanceof World && !world.isRemote()) {
+				ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(BonesondirtBlock.block));
+				entityToSpawn.setPickupDelay((int) 10);
+				world.addEntity(entityToSpawn);
 			}
 		}
 	}

@@ -5,6 +5,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.block.Blocks;
 
 import net.mcreator.archeology.ArcheologyMod;
 
@@ -43,6 +44,11 @@ public class BonesondirtExplodedProcedure {
 				entityToSpawn.setPickupDelay((int) 10);
 				world.addEntity(entityToSpawn);
 			}
+		}
+		if (world instanceof World && !world.isRemote()) {
+			ItemEntity entityToSpawn = new ItemEntity((World) world, x, y, z, new ItemStack(Blocks.DIRT));
+			entityToSpawn.setPickupDelay((int) 10);
+			world.addEntity(entityToSpawn);
 		}
 	}
 }

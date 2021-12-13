@@ -34,7 +34,7 @@
     ],
     "name": "Bones on dirt",
     "specialInfo": [],
-    "hardness": 1.0,
+    "hardness": 0.5,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
@@ -43,7 +43,7 @@
     },
     "destroyTool": "shovel",
     "customDrop": {
-      "value": "Blocks.DIRT#0"
+      "value": "Blocks.AIR"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -96,7 +96,7 @@
     },
     "luminance": 0,
     "unbreakable": false,
-    "breakHarvestLevel": 1,
+    "breakHarvestLevel": 0,
     "spawnParticles": false,
     "particleToSpawn": {
       "value": "EXPLOSION_NORMAL"

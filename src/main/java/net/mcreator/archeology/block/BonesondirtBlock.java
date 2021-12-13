@@ -45,8 +45,8 @@ public class BonesondirtBlock extends ArcheologyModElements.ModElement {
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
-			super(Block.Properties.create(Material.EARTH).sound(SoundType.GROUND).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).harvestLevel(1)
-					.harvestTool(ToolType.SHOVEL).setRequiresTool());
+			super(Block.Properties.create(Material.EARTH).sound(SoundType.GROUND).hardnessAndResistance(0.5f, 10f).setLightLevel(s -> 0)
+					.harvestLevel(0).harvestTool(ToolType.SHOVEL).setRequiresTool());
 			setRegistryName("bonesondirt");
 		}
 
@@ -60,7 +60,7 @@ public class BonesondirtBlock extends ArcheologyModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(Blocks.DIRT));
+			return Collections.singletonList(new ItemStack(Blocks.AIR));
 		}
 
 		@Override
