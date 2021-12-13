@@ -9,7 +9,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "info_stick",
-      "path": "~/DeveloperTools"
+      "path": "~/DeveloperTools/Info stick"
     },
     {
       "name": "InfoStickRightClickedInAir",
@@ -43,7 +43,7 @@
           }
         ]
       },
-      "path": "~/DeveloperTools"
+      "path": "~/DeveloperTools/Info stick"
     },
     {
       "name": "BonesondirtBlockDestroyedByPlayer",
@@ -156,7 +156,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/ArcheologySites/BoneBlocks/BonesOnDirt"
     },
     {
       "name": "InfoStickEntitySwingsItem",
@@ -173,7 +174,8 @@
             "type": "entity"
           }
         ]
-      }
+      },
+      "path": "~/DeveloperTools/Info stick"
     },
     {
       "name": "InfoStickRightClickedOnBlock",
@@ -206,7 +208,8 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/DeveloperTools/Info stick"
     }
   ],
   "variable_elements": [],
@@ -223,7 +226,12 @@
     "children": [
       {
         "name": "DeveloperTools",
-        "children": []
+        "children": [
+          {
+            "name": "Info stick",
+            "children": []
+          }
+        ]
       },
       {
         "name": "ArcheologySites",
