@@ -30,14 +30,90 @@
             "type": "world"
           }
         ]
-      }
+      },
+      "path": "~/DeveloperTools"
+    },
+    {
+      "name": "BonesondirtBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bonesondirt_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/ArcheologySites/BoneBlocks/BonesOnDirt"
+    },
+    {
+      "name": "Bonesondirt",
+      "type": "block",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bonesondirt",
+      "path": "~/ArcheologySites/BoneBlocks/BonesOnDirt"
+    },
+    {
+      "name": "BonesondirtExploded",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "bonesondirt_exploded",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/ArcheologySites/BoneBlocks/BonesOnDirt"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.archeology.info_stick": "Info Stick"
+      "item.archeology.info_stick": "Info Stick",
+      "block.archeology.bonesondirt": "Bones on dirt"
     }
   },
   "foldersRoot": {
@@ -46,6 +122,20 @@
       {
         "name": "DeveloperTools",
         "children": []
+      },
+      {
+        "name": "ArcheologySites",
+        "children": [
+          {
+            "name": "BoneBlocks",
+            "children": [
+              {
+                "name": "BonesOnDirt",
+                "children": []
+              }
+            ]
+          }
+        ]
       }
     ]
   },
