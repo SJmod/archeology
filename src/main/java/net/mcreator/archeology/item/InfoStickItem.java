@@ -4,16 +4,23 @@ package net.mcreator.archeology.item;
 import net.minecraftforge.registries.ObjectHolder;
 
 import net.minecraft.world.World;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Direction;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.ActionResult;
 import net.minecraft.item.Rarity;
+import net.minecraft.item.ItemUseContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.archeology.procedures.InfoStickRightClickedOnBlockProcedure;
 import net.mcreator.archeology.procedures.InfoStickRightClickedInAirProcedure;
+import net.mcreator.archeology.procedures.InfoStickEntitySwingsItemProcedure;
 import net.mcreator.archeology.ArcheologyModElements;
 
 import java.util.Map;
@@ -62,10 +69,52 @@ public class InfoStickItem extends ArcheologyModElements.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
 				InfoStickRightClickedInAirProcedure.executeProcedure($_dependencies);
 			}
 			return ar;
+		}
+
+		@Override
+		public ActionResultType onItemUseFirst(ItemStack stack, ItemUseContext context) {
+			ActionResultType retval = super.onItemUseFirst(stack, context);
+			World world = context.getWorld();
+			BlockPos pos = context.getPos();
+			PlayerEntity entity = context.getPlayer();
+			Direction direction = context.getFace();
+			BlockState blockstate = world.getBlockState(pos);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			ItemStack itemstack = context.getItem();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				InfoStickRightClickedOnBlockProcedure.executeProcedure($_dependencies);
+			}
+			return retval;
+		}
+
+		@Override
+		public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
+			boolean retval = super.onEntitySwing(itemstack, entity);
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			World world = entity.world;
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				InfoStickEntitySwingsItemProcedure.executeProcedure($_dependencies);
+			}
+			return retval;
 		}
 	}
 }

@@ -32,6 +32,12 @@
     "onRightClickedInAir": {
       "name": "InfoStickRightClickedInAir"
     },
+    "onRightClickedOnBlock": {
+      "name": "InfoStickRightClickedOnBlock"
+    },
+    "onEntitySwing": {
+      "name": "InfoStickEntitySwingsItem"
+    },
     "hasDispenseBehavior": false
   }
 }
