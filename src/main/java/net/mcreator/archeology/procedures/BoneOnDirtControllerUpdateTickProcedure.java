@@ -41,29 +41,36 @@ public class BoneOnDirtControllerUpdateTickProcedure {
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
-		sx = (double) (-2);
-		for (int index0 = 0; index0 < (int) (4); index0++) {
+		sx = (double) (-3);
+		for (int index0 = 0; index0 < (int) (6); index0++) {
 			sy = (double) (-1);
 			for (int index1 = 0; index1 < (int) (2); index1++) {
-				sz = (double) (-2);
-				for (int index2 = 0; index2 < (int) (4); index2++) {
+				sz = (double) (-3);
+				for (int index2 = 0; index2 < (int) (6); index2++) {
 					if (((!((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz)))).getBlock() == Blocks.AIR))
 							&& (!((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz))))
 									.getBlock() == BoneOnDirtControllerBlock.block)))) {
-						if ((Math.random() < 0.7)) {
-							{
-								BlockPos _bp = new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz));
-								BlockState _bs = BonesondirtBlock.block.getDefaultState();
-								BlockState _bso = world.getBlockState(_bp);
-								for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-									Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-									if (_property != null && _bs.get(_property) != null)
-										try {
-											_bs = _bs.with(_property, (Comparable) entry.getValue());
-										} catch (Exception e) {
-										}
+						if ((((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz))))
+								.getMaterial() == net.minecraft.block.material.Material.EARTH)
+								|| (((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz))))
+										.getMaterial() == net.minecraft.block.material.Material.ROCK)
+										|| ((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz))))
+												.getMaterial() == net.minecraft.block.material.Material.ORGANIC)))) {
+							if ((Math.random() < 0.6)) {
+								{
+									BlockPos _bp = new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz));
+									BlockState _bs = BonesondirtBlock.block.getDefaultState();
+									BlockState _bso = world.getBlockState(_bp);
+									for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+										Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+										if (_property != null && _bs.get(_property) != null)
+											try {
+												_bs = _bs.with(_property, (Comparable) entry.getValue());
+											} catch (Exception e) {
+											}
+									}
+									world.setBlockState(_bp, _bs, 3);
 								}
-								world.setBlockState(_bp, _bs, 3);
 							}
 						}
 					}
@@ -73,31 +80,70 @@ public class BoneOnDirtControllerUpdateTickProcedure {
 			}
 			sx = (double) (sx + 1);
 		}
-		sx = (double) (-4);
-		for (int index3 = 0; index3 < (int) (8); index3++) {
-			sy = (double) (-4);
-			for (int index4 = 0; index4 < (int) (8); index4++) {
-				sz = (double) (-4);
-				for (int index5 = 0; index5 < (int) (8); index5++) {
+		sx = (double) (-5);
+		for (int index3 = 0; index3 < (int) (10); index3++) {
+			sy = (double) (-5);
+			for (int index4 = 0; index4 < (int) (10); index4++) {
+				sz = (double) (-5);
+				for (int index5 = 0; index5 < (int) (10); index5++) {
 					if (((!((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz)))).getBlock() == Blocks.AIR))
-							&& ((!((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz))))
+							&& ((!((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) sy)))
 									.getBlock() == BonesondirtBlock.block))
 									&& (!((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz))))
 											.getBlock() == BoneOnDirtControllerBlock.block))))) {
-						if ((Math.random() < 0.3)) {
-							{
-								BlockPos _bp = new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz));
-								BlockState _bs = BonesondirtBlock.block.getDefaultState();
-								BlockState _bso = world.getBlockState(_bp);
-								for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-									Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-									if (_property != null && _bs.get(_property) != null)
-										try {
-											_bs = _bs.with(_property, (Comparable) entry.getValue());
-										} catch (Exception e) {
+						if ((((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz))))
+								.getMaterial() == net.minecraft.block.material.Material.EARTH)
+								|| (((world.getBlockState(new BlockPos((int) (x + sx), (int) 0, (int) (z + sz))))
+										.getMaterial() == net.minecraft.block.material.Material.ROCK)
+										|| ((world.getBlockState(new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz))))
+												.getMaterial() == net.minecraft.block.material.Material.ORGANIC)))) {
+							if ((Math.random() < 0.35)) {
+								if ((Math.random() < 0.35)) {
+									{
+										BlockPos _bp = new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz));
+										BlockState _bs = BonesondirtBlock.block.getDefaultState();
+										BlockState _bso = world.getBlockState(_bp);
+										for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+											Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+											if (_property != null && _bs.get(_property) != null)
+												try {
+													_bs = _bs.with(_property, (Comparable) entry.getValue());
+												} catch (Exception e) {
+												}
 										}
+										world.setBlockState(_bp, _bs, 3);
+									}
+								} else if ((Math.random() < 0.5)) {
+									{
+										BlockPos _bp = new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz));
+										BlockState _bs = Blocks.COARSE_DIRT.getDefaultState();
+										BlockState _bso = world.getBlockState(_bp);
+										for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+											Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+											if (_property != null && _bs.get(_property) != null)
+												try {
+													_bs = _bs.with(_property, (Comparable) entry.getValue());
+												} catch (Exception e) {
+												}
+										}
+										world.setBlockState(_bp, _bs, 3);
+									}
+								} else {
+									{
+										BlockPos _bp = new BlockPos((int) (x + sx), (int) (y + sy), (int) (z + sz));
+										BlockState _bs = Blocks.GRASS_PATH.getDefaultState();
+										BlockState _bso = world.getBlockState(_bp);
+										for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+											Property _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+											if (_property != null && _bs.get(_property) != null)
+												try {
+													_bs = _bs.with(_property, (Comparable) entry.getValue());
+												} catch (Exception e) {
+												}
+										}
+										world.setBlockState(_bp, _bs, 3);
+									}
 								}
-								world.setBlockState(_bp, _bs, 3);
 							}
 						}
 					}
